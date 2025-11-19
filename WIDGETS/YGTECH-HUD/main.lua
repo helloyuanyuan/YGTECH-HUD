@@ -36,10 +36,10 @@ local CONST = {
 }
 
 -- 遥测数据
-local lat = 0
-local lon = 0
-local alt = 0
-local speed = 0
+local latitude = 0
+local longitude = 0
+local altitude = 0
+local groundSpeed = 0
 
 -- 加载位图资源 (恢复原始加载方式)
 local home = bitmap.open(CONST.PATH_HOME)
@@ -57,13 +57,13 @@ local minor
 local rev
 local osname ={}
 
-local hx  
-local hy
-local lx
-local ly
-local qx
-local qy
-local q3x
+local centerX
+local centerY
+local screenWidth
+local screenHeight
+local quarterX
+local quarterY
+local threeQuarterX
 
 local second = 0
 local modelInfo
@@ -98,9 +98,9 @@ local CRSF_FRAME_CUSTOM_TELEM_LEGACY = 0x7F
 local CRSF_CUSTOM_TELEM_PASSTHROUGH = 0xF0
 local CRSF_CUSTOM_TELEM_STATUS_TEXT = 0xF1
 local CRSF_CUSTOM_TELEM_PASSTHROUGH_ARRAY = 0xF2
-local roll = 0
-local pitch = 0
-local yaw = 0
+local rollAngle = 0
+local pitchAngle = 0
+local yawAngle = 0
 local screenshot_enable = 1
 
 local param_edit = 0
@@ -111,9 +111,9 @@ local setup_y_max = -200
 local touch_slide_flag = 0
 local touch_x_old = 0
 local touch_y_old = 0
-local home_fixed = 0
-local RC_linked = 0
-local setup_status={0,0,0,0}
+local isHomeFixed = 0
+local isRcLinked = 0
+local setupStatusList = {0,0,0,0}
 
 local write = {}
 local read_num = 0
